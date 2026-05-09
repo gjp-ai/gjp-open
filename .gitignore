@@ -1,4 +1,74 @@
-gjp-open-api-boot/
-gjp-open-web-react/
-gjp-open-android-kotlin/
-gjp-open-ios-swift/
+# OS files
+.DS_Store
+Thumbs.db
+*.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.cursor/
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+build/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Java / Maven / Gradle
+target/
+out/
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+build/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Android
+capture/
+*.apk
+*.aar
+*.ap_
+*.dex
+local.properties
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+*.keystore
+!debug.keystore
+
+# iOS / Swift
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+*.xcuserdatad/
+*.xcscmblueprint
+Pods/
+build/
+
+# Misc
+*.bak
+*.tmp
+*.temp
