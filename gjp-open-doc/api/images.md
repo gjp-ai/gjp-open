@@ -2,22 +2,42 @@
 
 ## Endpoints
 
-| Method | Path | Description |
-| --- | --- | --- |
-| `GET` | `/api/open/images` | Paged image list. |
-| `GET` | `/api/open/images/all` | Full image list (no pagination). |
-| `GET` | `/api/open/images/{id}` | Image detail. |
-| `GET` | `/api/open/images/view/{filename}` | Raw image response. |
+### 1. Paged Image List
+`GET /api/open/images`
 
-## List Filters
-
-Also see [common query parameters](00-common.md#common-query-parameters).
-
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
 | Parameter | Type | Notes |
 | --- | --- | --- |
 | `name` | string | Canonical search field for images. |
 
-## Response Item
+**Response Payload**
+Returns a `PaginatedResponse` where `data.content` is an array of [Image Response Items](#image-response-item).
+
+### 2. Full Image List (Non-Paginated)
+`GET /api/open/images/all`
+
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
+| Parameter | Type | Notes |
+| --- | --- | --- |
+| `name` | string | Canonical search field for images. |
+| `updatedAfter` | string | Filter data updated after this time (incremental sync).<br>Example: `2024-05-10T15:30:00Z` or `2024-05-10 15:30:00` |
+
+**Response Payload**
+Returns an array of [Image Response Items](#image-response-item) directly in the `data` field (no pagination envelope).
+
+### 3. Image Detail
+`GET /api/open/images/{id}`
+
+**Response Payload**
+Returns a single [Image Response Item](#image-response-item) in the `data` field.
+
+### 4. View Image
+`GET /api/open/images/view/{filename}`
+Raw image response.
+
+---
+
+## Image Response Item
 
 | Field | Type |
 | --- | --- |

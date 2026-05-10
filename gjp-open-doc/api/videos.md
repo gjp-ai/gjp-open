@@ -2,23 +2,46 @@
 
 ## Endpoints
 
-| Method | Path | Description |
-| --- | --- | --- |
-| `GET` | `/api/open/videos` | Paged video list. |
-| `GET` | `/api/open/videos/all` | Full video list (no pagination). |
-| `GET` | `/api/open/videos/{id}` | Video detail. |
-| `GET` | `/api/open/videos/view/{filename}` | Raw streamable video response. |
-| `GET` | `/api/open/videos/cover-images/{filename}` | Raw cover image response. |
+### 1. Paged Video List
+`GET /api/open/videos`
 
-## List Filters
-
-Also see [common query parameters](00-common.md#common-query-parameters).
-
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
 | Parameter | Type | Notes |
 | --- | --- | --- |
-| `name` | string | Canonical search field for videos. |
+| `name` | string | Canonical search field for videos (maps to the `title` field in the response). |
 
-## Response Item
+**Response Payload**
+Returns a `PaginatedResponse` where `data.content` is an array of [Video Response Items](#video-response-item).
+
+### 2. Full Video List (Non-Paginated)
+`GET /api/open/videos/all`
+
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
+| Parameter | Type | Notes |
+| --- | --- | --- |
+| `name` | string | Canonical search field for videos (maps to the `title` field in the response). |
+| `updatedAfter` | string | Filter data updated after this time (incremental sync).<br>Example: `2024-05-10T15:30:00Z` or `2024-05-10 15:30:00` |
+
+**Response Payload**
+Returns an array of [Video Response Items](#video-response-item) directly in the `data` field (no pagination envelope).
+
+### 3. Video Detail
+`GET /api/open/videos/{id}`
+
+**Response Payload**
+Returns a single [Video Response Item](#video-response-item) in the `data` field.
+
+### 4. Stream Video
+`GET /api/open/videos/view/{filename}`
+Raw streamable video response.
+
+### 5. Cover Image
+`GET /api/open/videos/cover-images/{filename}`
+Raw cover image response.
+
+---
+
+## Video Response Item
 
 | Field | Type |
 | --- | --- |

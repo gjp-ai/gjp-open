@@ -57,6 +57,17 @@ List endpoints return `data` in this shape:
 }
 ```
 
+## Non-Paginated List Endpoints
+
+Resources may expose a `/all` endpoint (e.g. `/api/open/articles/all`) to return the full dataset without pagination. This is intended for mobile apps that need to perform a full sync or refresh of local data.
+
+## Incremental Synchronization
+
+To efficiently sync data, client applications should:
+1. Store the latest `updatedAt` value from their local database.
+2. Use the `updatedAfter` query parameter on the `/all` endpoint to fetch only records changed since that time.
+3. The server filters results using `updatedAt > :updatedAfter`.
+
 ## Common Query Parameters
 
 | Parameter | Type | Default | Notes |
@@ -68,6 +79,7 @@ List endpoints return `data` in this shape:
 | `size` | number | `20` | Page size. |
 | `sort` | string | `displayOrder` | Use API-supported fields only. |
 | `direction` | `asc` or `desc` | `asc` | Sort direction. |
+| `updatedAfter` | string | none | Filters data updated after this time. Supported formats:<br>• ISO 8601: `2024-05-10T15:30:00Z`<br>• Standard: `2024-05-10 15:30:00` |
 
 Important: use canonical API parameter names. Do not assume `search` or `tag` aliases exist unless the API adds them.
 

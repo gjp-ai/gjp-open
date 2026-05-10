@@ -15,6 +15,7 @@ Also see [common query parameters](00-common.md#common-query-parameters).
 | Parameter | Type | Notes |
 | --- | --- | --- |
 | `question` | string | Canonical search field for Q&A. |
+| `updatedAfter` | string | Filter data updated after this time (incremental sync).<br>Example: `2024-05-10T15:30:00Z` or `2024-05-10 15:30:00` |
 
 ## Response Item
 

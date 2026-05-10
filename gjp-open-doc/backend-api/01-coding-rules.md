@@ -14,6 +14,12 @@ Paginated list:
 ApiResponse<PaginatedResponse<T>>
 ```
 
+Non-paginated list:
+
+```java
+ApiResponse<List<T>>
+```
+
 Success:
 
 ```java

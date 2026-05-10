@@ -2,22 +2,42 @@
 
 ## Endpoints
 
-| Method | Path | Description |
-| --- | --- | --- |
-| `GET` | `/api/open/files` | Paged file list. |
-| `GET` | `/api/open/files/all` | Full file list (no pagination). |
-| `GET` | `/api/open/files/{id}` | File detail. |
-| `GET` | `/api/open/files/view/{filename}` | Raw file download response. |
+### 1. Paged File List
+`GET /api/open/files`
 
-## List Filters
-
-Also see [common query parameters](00-common.md#common-query-parameters).
-
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
 | Parameter | Type | Notes |
 | --- | --- | --- |
 | `name` | string | Canonical search field for files. |
 
-## Response Item
+**Response Payload**
+Returns a `PaginatedResponse` where `data.content` is an array of [File Response Items](#file-response-item).
+
+### 2. Full File List (Non-Paginated)
+`GET /api/open/files/all`
+
+**Query Parameters** (Also see [common query parameters](00-common.md#common-query-parameters))
+| Parameter | Type | Notes |
+| --- | --- | --- |
+| `name` | string | Canonical search field for files. |
+| `updatedAfter` | string | Filter data updated after this time (incremental sync).<br>Example: `2024-05-10T15:30:00Z` or `2024-05-10 15:30:00` |
+
+**Response Payload**
+Returns an array of [File Response Items](#file-response-item) directly in the `data` field (no pagination envelope).
+
+### 3. File Detail
+`GET /api/open/files/{id}`
+
+**Response Payload**
+Returns a single [File Response Item](#file-response-item) in the `data` field.
+
+### 4. File Download
+`GET /api/open/files/view/{filename}`
+Raw file download response.
+
+---
+
+## File Response Item
 
 | Field | Type |
 | --- | --- |
