@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/images` | Paged image list. |
+| `GET` | `/api/open/images/all` | Full image list (no pagination). |
 | `GET` | `/api/open/images/{id}` | Image detail. |
 | `GET` | `/api/open/images/view/{filename}` | Raw image response. |
 

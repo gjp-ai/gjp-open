@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/articles` | Paged article list. |
+| `GET` | `/api/open/articles/all` | Full article list (no pagination). |
 | `GET` | `/api/open/articles/{id}` | Article detail. |
 | `GET` | `/api/open/articles/cover-images/{filename}` | Raw cover image response. |
 

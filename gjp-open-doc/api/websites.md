@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/websites` | Paged website list. |
+| `GET` | `/api/open/websites/all` | Full website list (no pagination). |
 | `GET` | `/api/open/websites/{id}` | Website detail. |
 
 ## List Filters

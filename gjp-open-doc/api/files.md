@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/files` | Paged file list. |
+| `GET` | `/api/open/files/all` | Full file list (no pagination). |
 | `GET` | `/api/open/files/{id}` | File detail. |
 | `GET` | `/api/open/files/view/{filename}` | Raw file download response. |
 

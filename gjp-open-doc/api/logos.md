@@ -7,6 +7,7 @@ Logos are currently exposed by the API and may be used by the app if needed for 
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/logos` | Paged logo list. |
+| `GET` | `/api/open/logos/all` | Full logo list (no pagination). |
 | `GET` | `/api/open/logos/{id}` | Logo detail. |
 | `GET` | `/api/open/logos/view/{filename}` | Raw logo image response. |
 

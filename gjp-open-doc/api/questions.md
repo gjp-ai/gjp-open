@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/questions` | Paged Q&A list. |
+| `GET` | `/api/open/questions/all` | Full Q&A list (no pagination). |
 | `GET` | `/api/open/questions/{id}` | Q&A detail. |
 
 ## List Filters

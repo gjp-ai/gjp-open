@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/audios` | Paged audio list. |
+| `GET` | `/api/open/audios/all` | Full audio list (no pagination). |
 | `GET` | `/api/open/audios/{id}` | Audio detail. |
 | `GET` | `/api/open/audios/view/{filename}` | Raw streamable audio response. |
 | `GET` | `/api/open/audios/cover-images/{filename}` | Raw cover image response. |

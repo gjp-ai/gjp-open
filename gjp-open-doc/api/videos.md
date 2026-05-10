@@ -5,6 +5,7 @@
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/api/open/videos` | Paged video list. |
+| `GET` | `/api/open/videos/all` | Full video list (no pagination). |
 | `GET` | `/api/open/videos/{id}` | Video detail. |
 | `GET` | `/api/open/videos/view/{filename}` | Raw streamable video response. |
 | `GET` | `/api/open/videos/cover-images/{filename}` | Raw cover image response. |
